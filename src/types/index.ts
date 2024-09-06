@@ -20,3 +20,10 @@ export interface PhotoInfo {
   url: string;
   thumbnailUrl: string;
 }
+
+export interface PostInfo {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
