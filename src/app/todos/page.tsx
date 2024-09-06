@@ -1,33 +1,28 @@
+import TodoCard from "@/components/TodoCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
 import { TodoInfo } from "@/types";
-import React from "react";
+import axios from "axios";
+import { NextPage } from "next";
 
-// Define getServerSideProps for SSR
-export const getServerSideProps = async () => {
-  const res = await fetch(`${JSON_PLACE_HOLDER_URL}/todos`);
-  const todoList = await res.json();
+const TodoPage: NextPage = async () => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/todos`);
+  const todoList: TodoInfo[] = response.data;
 
-  return {
-    props: {
-      todoList, // Pass the fetched data as props
-    },
-  };
-};
-
-interface TodoPageProps {
-  todoList: TodoInfo[]; // Define the type of your data
-}
-
-const TodoPage: React.FC<TodoPageProps> = ({ todoList }) => {
   return (
-    <>
-      <h1>This is Todo List Page</h1>
-      <ul>
-        {todoList.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
-    </>
+    <div className="flex flex-col w-full h-full">
+      <div className="flex w-full h-1/6 items-center">
+        <span className="text-2xl font-bold p-8">TODOs</span>
+      </div>
+      <div className="flex-grow">
+        <div className="flex w-full h-full justify-center items-center p-8">
+          <div className="grid grid-cols-5 gap-8">
+            {todoList.map((todo, idx) => (
+              <TodoCard todoInfo={todo} key={idx} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
