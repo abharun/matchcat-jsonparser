@@ -1,23 +1,23 @@
-import CommentCard from "@/components/cards/CommentCard";
+import UserCard from "@/components/cards/UserCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
-import { CommentInfo } from "@/types/resourceInfo";
+import { UserInfo } from "@/types/resourceInfo";
 import axios from "axios";
 import { NextPage } from "next";
 
-const CommentPage: NextPage = async () => {
-  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/comments`);
-  const commentList: CommentInfo[] = response.data;
+const UserPage: NextPage = async () => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/users`);
+  const userList: UserInfo[] = response.data;
 
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex w-full h-1/6 items-center">
-        <span className="text-2xl font-bold p-8">Comments</span>
+        <span className="text-2xl font-bold p-8">Users</span>
       </div>
       <div className="flex-grow">
         <div className="flex w-full h-full justify-center items-center p-8">
           <div className="grid gap-8 w-full h-full grid-cols-5 laptop:grid-cols-5 tablet:grid-cols-3 mobile:grid-cols-1">
-            {commentList.map((comment, idx) => (
-              <CommentCard commentInfo={comment} key={idx} />
+            {userList.map((user, idx) => (
+              <UserCard userInfo={user} key={idx} />
             ))}
           </div>
         </div>
@@ -26,4 +26,4 @@ const CommentPage: NextPage = async () => {
   );
 };
 
-export default CommentPage;
+export default UserPage;

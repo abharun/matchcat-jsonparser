@@ -1,6 +1,6 @@
 import TodoCard from "@/components/cards/TodoCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
-import { TodoInfo } from "@/types";
+import { TodoInfo } from "@/types/resourceInfo";
 import axios from "axios";
 import { NextPage } from "next";
 

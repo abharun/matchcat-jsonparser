@@ -1,6 +1,6 @@
 import PhotoCard from "@/components/cards/PhotoCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
-import { PhotoInfo } from "@/types";
+import { PhotoInfo } from "@/types/resourceInfo";
 import axios from "axios";
 import { NextPage } from "next";
 
