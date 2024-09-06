@@ -1,5 +1,5 @@
 import React from "react";
-import SourceCard from "./SourceCard";
+import SourceCard from "./cards/SourceCard";
 import { ResourceData } from "@/consts";
 
 const ResourceBoard: React.FC = () => {
