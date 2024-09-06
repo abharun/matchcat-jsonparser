@@ -1,10 +1,14 @@
+import ResourceBoard from "@/components/ResourceBoard";
 import MainLayout from "@/layouts/MainLayout";
 
-const UserPage: React.FC = () => {
-  return <MainLayout>
-    <div>this is Dashboard</div>
-  </MainLayout>;
+const Dashboard: React.FC = () => {
+  return (
+    <MainLayout>
+      <div className="flex w-full h-full items-center justify-center">
+        <ResourceBoard />
+      </div>
+    </MainLayout>
+  );
 };
 
-
-export default UserPage;
+export default Dashboard;
