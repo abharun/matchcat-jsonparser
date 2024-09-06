@@ -1,4 +1,4 @@
-import { PhotoInfo } from "@/types";
+import { PhotoInfo } from "@/types/resourceInfo";
 import { NextPage } from "next";
 import Image from "next/image";
 import InfoSpan from "@/components/InfoSpan";

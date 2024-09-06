@@ -1,4 +1,4 @@
-import { CommentInfo } from "@/types";
+import { CommentInfo } from "@/types/resourceInfo";
 import { NextPage } from "next";
 import InfoSpan from "@/components/InfoSpan";
 

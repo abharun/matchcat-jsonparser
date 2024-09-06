@@ -1,4 +1,4 @@
-import { AlbumInfo } from "@/types";
+import { AlbumInfo } from "@/types/resourceInfo";
 import { NextPage } from "next";
 import InfoSpan from "@/components/InfoSpan";
 

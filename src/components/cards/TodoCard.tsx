@@ -1,4 +1,4 @@
-import { TodoInfo } from "@/types";
+import { TodoInfo } from "@/types/resourceInfo";
 import { NextPage } from "next";
 import InfoSpan from "@/components/InfoSpan";
 

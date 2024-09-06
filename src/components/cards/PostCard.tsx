@@ -1,4 +1,4 @@
-import { PostInfo } from "@/types";
+import { PostInfo } from "@/types/resourceInfo";
 import { NextPage } from "next";
 import InfoSpan from "@/components/InfoSpan";
 
