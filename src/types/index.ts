@@ -12,3 +12,11 @@ export interface CommentInfo {
   email: string;
   body: string;
 }
+
+export interface PhotoInfo {
+  albumId: number;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+}
