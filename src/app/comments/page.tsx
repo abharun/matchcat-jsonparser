@@ -1,4 +1,4 @@
-import CommantCard from "@/components/CommentCard";
+import CommantCard from "@/components/cards/CommentCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
 import { CommentInfo } from "@/types";
 import axios from "axios";

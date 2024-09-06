@@ -1,4 +1,4 @@
-import TodoCard from "@/components/TodoCard";
+import TodoCard from "@/components/cards/TodoCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
 import { TodoInfo } from "@/types";
 import axios from "axios";

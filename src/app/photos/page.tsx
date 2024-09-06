@@ -1,4 +1,4 @@
-import PhotoCard from "@/components/PhotoCard";
+import PhotoCard from "@/components/cards/PhotoCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
 import { PhotoInfo } from "@/types";
 import axios from "axios";

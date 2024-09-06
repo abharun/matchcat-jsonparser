@@ -10,7 +10,6 @@ const CommantCard: NextPage<CommandCardProps> = (props) => {
   const { commentInfo } = props;
   return (
     <div className="flex w-full h-full border-2">
-      <div className="flex justify-center items-center shadow-sm">
         <div className="flex-col w-full h-full">
           <div className="w-full h-full p-2">
             <InfoSpan tag="ID" value={commentInfo.id} />
@@ -20,7 +19,6 @@ const CommantCard: NextPage<CommandCardProps> = (props) => {
             <InfoSpan tag="Body" value={commentInfo.body} />
           </div>
         </div>
-      </div>
     </div>
   );
 };

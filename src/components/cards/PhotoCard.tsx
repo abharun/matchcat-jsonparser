@@ -1,7 +1,7 @@
 import { PhotoInfo } from "@/types";
 import { NextPage } from "next";
 import Image from "next/image";
-import InfoSpan from "./InfoSpan";
+import InfoSpan from "@/components/InfoSpan";
 
 interface PhotoCardProps {
   photoInfo: PhotoInfo;
