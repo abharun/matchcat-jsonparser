@@ -1,6 +1,6 @@
 import PostCard from "@/components/cards/PostCard";
 import { JSON_PLACE_HOLDER_URL } from "@/consts";
-import { PostInfo } from "@/types";
+import { PostInfo } from "@/types/resourceInfo";
 import axios from "axios";
 import { NextPage } from "next";
 
