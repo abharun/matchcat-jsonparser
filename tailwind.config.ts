@@ -12,6 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        enterprise: { min: "1621px" },
+        desktop: { max: "1620px", min: "1441px" },
+        laptop: { max: "1440px", min: "1025px" },
+        tablet: { max: "1024px", min: "426px" },
+        mobile: { max: "425px" },
+      },
     },
   },
   plugins: [],
