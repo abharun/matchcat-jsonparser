@@ -4,3 +4,11 @@ export interface TodoInfo {
   title: string;
   completed: boolean;
 }
+
+export interface CommentInfo {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
