@@ -28,7 +28,7 @@ interface CommandCardProps {
   commentInfo: CommentInfo;
 }
 
-const CommandCard: NextPage<CommandCardProps> = (props) => {
+const CommantCard: NextPage<CommandCardProps> = (props) => {
   const { commentInfo } = props;
   return (
     <div className="flex w-full h-full border-2">
@@ -47,4 +47,4 @@ const CommandCard: NextPage<CommandCardProps> = (props) => {
   );
 };
 
-export default CommandCard;
+export default CommantCard;
