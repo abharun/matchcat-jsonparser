@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Album {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  title           String
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id              Int      @id @default(autoincrement())
+  postId          Int
+  name            String
+  email           String
+  body            String
+  createdAt DateTime @default(now())
+}
+
+model Photo {
+  id              Int      @id @default(autoincrement())
+  albumId         Int
+  title           String
+  url             String
+  thumbnailUrl    String
+  createdAt       DateTime @default(now())
+}
+
+model Post {
+  id              Int      @id @default(autoincrement())
+  userId          String
+  title           String
+  body            String
+  createdAt DateTime @default(now())
+}
+
+model Todo {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  title           String
+  completed       Boolean
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id              Int      @id @default(autoincrement())
+  name            String
+  username        String 
+  email           String 
+  address         Json 
+  phone           String 
+  website         String 
+  company         Json
+  createdAt DateTime @default(now())
+}
