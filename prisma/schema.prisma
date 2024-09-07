@@ -40,7 +40,7 @@ model Photo {
 
 model Post {
   id              Int      @id @default(autoincrement())
-  userId          String
+  userId          Int
   title           String
   body            String
   createdAt DateTime @default(now())

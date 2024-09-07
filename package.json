@@ -2,11 +2,14 @@
   "name": "matchcat",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "npx prisma migrate dev --name init-setup",
+    "seed": "node ./MockData/initData.js"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
