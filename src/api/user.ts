@@ -8,16 +8,19 @@ export const fetchUsers = async () => {
 };
 
 export const createUser = async (user: UserInfo) => {
-    const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/users`, user);
-    return response.data;
-}
+  const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/users`, user);
+  return response.data;
+};
 
 export const editUser = async (id: number, user: UserInfo) => {
-    const response = await axios.put(`${JSON_PLACE_HOLDER_URL}/users/${id}`, user);
-    return response.data;
-}
+  const response = await axios.put(
+    `${JSON_PLACE_HOLDER_URL}/users/${id}`,
+    user
+  );
+  return response.data;
+};
 
 export const deleteUser = async (id: number) => {
-    const response = await axios.delete(`${JSON_PLACE_HOLDER_URL}/users/${id}`);
-    return response.data;
-}
+  const response = await axios.delete(`${JSON_PLACE_HOLDER_URL}/users/${id}`);
+  return response.data;
+};

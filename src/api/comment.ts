@@ -8,16 +8,24 @@ export const fetchComments = async () => {
 };
 
 export const createComment = async (comment: CommentInfo) => {
-    const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/comments`, comment);
-    return response.data;
-}
+  const response = await axios.post(
+    `${JSON_PLACE_HOLDER_URL}/comments`,
+    comment
+  );
+  return response.data;
+};
 
 export const editComment = async (id: number, comment: CommentInfo) => {
-    const response = await axios.put(`${JSON_PLACE_HOLDER_URL}/comments/${id}`, comment);
-    return response.data;
-}
+  const response = await axios.put(
+    `${JSON_PLACE_HOLDER_URL}/comments/${id}`,
+    comment
+  );
+  return response.data;
+};
 
 export const deleteComment = async (id: number) => {
-    const response = await axios.delete(`${JSON_PLACE_HOLDER_URL}/comments/${id}`);
-    return response.data;
-}
+  const response = await axios.delete(
+    `${JSON_PLACE_HOLDER_URL}/comments/${id}`
+  );
+  return response.data;
+};
