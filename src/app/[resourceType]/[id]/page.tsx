@@ -6,19 +6,18 @@ import {
   TodoAPI,
   UserAPI,
 } from "@/api";
-import AlbumCard from "@/components/cards/AlbumCard";
-import CommentCard from "@/components/cards/CommentCard";
-import PhotoCard from "@/components/cards/PhotoCard";
-import PostCard from "@/components/cards/PostCard";
-import TodoCard from "@/components/cards/TodoCard";
-import UserCard from "@/components/cards/UserCard";
+import AlbumEditCard from "@/components/editcards/AlbumEditCard";
+import CommentEditCard from "@/components/editcards/CommentEditCard";
+import PhotoEditCard from "@/components/editcards/PhotoEditCard";
+import PostEditCard from "@/components/editcards/PostEditCard";
+import TodoEditCard from "@/components/editcards/TodoEditCard";
+import UserEditCard from "@/components/editcards/UserEditCard";
 import {
   AlbumInfo,
   CommentInfo,
   PhotoInfo,
   PostInfo,
   TodoInfo,
-  UserInfo,
 } from "@/types/resourceInfo";
 
 const ResourceDetailPage = async ({
@@ -30,27 +29,32 @@ const ResourceDetailPage = async ({
     switch (params.resourceType) {
       case "posts":
         const post: PostInfo = await PostAPI.fetchPost(params.id);
-        return <PostCard postInfo={post} />;
+        return <PostEditCard id={params.id} postInfo={post} />;
       case "comments":
         const comment: CommentInfo = await CommentAPI.fetchComment(params.id);
-        return <CommentCard commentInfo={comment} />;
+        return <CommentEditCard id={params.id} commentInfo={comment} />;
       case "albums":
         const album: AlbumInfo = await AlbumAPI.fetchAlbum(params.id);
-        return <AlbumCard albumInfo={album} />;
+        return <AlbumEditCard id={params.id} albumInfo={album} />;
       case "photos":
         const photo: PhotoInfo = await PhotoAPI.fetchPhoto(params.id);
-        return <PhotoCard photoInfo={photo} />;
+        return <PhotoEditCard id={params.id} photoInfo={photo} />;
       case "todos":
         const todo: TodoInfo = await TodoAPI.fetchTodo(params.id);
-        return <TodoCard todoInfo={todo} />;
+        return <TodoEditCard id={params.id} todoInfo={todo} />;
       case "users":
-        const user: UserInfo = await UserAPI.fetchUser(params.id);
-        return <UserCard userInfo={user} />;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const user: any = await UserAPI.fetchUser(params.id);
+        return <UserEditCard id={params.id} userInfo={user} />;
       default:
         return;
     }
   };
-  return <div className="flex h-max">{await renderComponent()}</div>;
+  return (
+    <div className="grid gap-8 w-1/2 h-full">
+      <div className="flex h-max">{await renderComponent()}</div>
+    </div>
+  );
 };
 
 export default ResourceDetailPage;
