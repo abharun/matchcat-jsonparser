@@ -7,6 +7,11 @@ export const fetchUsers = async () => {
   return response.data;
 };
 
+export const fetchUser = async (id: number) => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/users/${id}`);
+  return response.data;
+};
+
 export const createUser = async (user: UserInfo) => {
   const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/users`, user);
   return response.data;

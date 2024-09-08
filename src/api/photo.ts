@@ -7,6 +7,11 @@ export const fetchPhotos = async () => {
   return response.data;
 };
 
+export const fetchPhoto = async (id: number) => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/photos/${id}`);
+  return response.data;
+};
+
 export const createPhoto = async (photo: PhotoInfo) => {
   const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/photos`, photo);
   return response.data;

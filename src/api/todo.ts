@@ -7,6 +7,11 @@ export const fetchTodos = async () => {
   return response.data;
 };
 
+export const fetchTodo = async (id: number) => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/todos/${id}`);
+  return response.data;
+};
+
 export const createTodo = async (todo: TodoInfo) => {
   const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/todos`, todo);
   return response.data;

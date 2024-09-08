@@ -7,6 +7,11 @@ export const fetchComments = async () => {
   return response.data;
 };
 
+export const fetchComment = async (id: number) => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/comments/${id}`);
+  return response.data;
+};
+
 export const createComment = async (comment: CommentInfo) => {
   const response = await axios.post(
     `${JSON_PLACE_HOLDER_URL}/comments`,

@@ -7,6 +7,11 @@ export const fetchAlbums = async () => {
   return response.data;
 };
 
+export const fetchAlbum = async (id: number) => {
+  const response = await axios.get(`${JSON_PLACE_HOLDER_URL}/albums/${id}`);
+  return response.data;
+};
+
 export const createAlbum = async (album: AlbumInfo) => {
   const response = await axios.post(`${JSON_PLACE_HOLDER_URL}/albums`, album);
   return response.data;
