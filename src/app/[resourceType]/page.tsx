@@ -63,7 +63,11 @@ const ResourcePage = async ({
     }
   };
 
-  return renderComponent();
+  return (
+    <div className="grid gap-8 w-full h-full grid-cols-5 laptop:grid-cols-5 tablet:grid-cols-3 mobile:grid-cols-1">
+      {renderComponent()}
+    </div>
+  );
 };
 
 export default ResourcePage;
