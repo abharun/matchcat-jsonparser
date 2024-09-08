@@ -6,12 +6,12 @@ import {
   TodoAPI,
   UserAPI,
 } from "@/api";
-import CommentCard from "@/components/cards/CommentCard";
 import PhotoCard from "@/components/cards/PhotoCard";
 import PostCard from "@/components/cards/PostCard";
 import TodoCard from "@/components/cards/TodoCard";
 import UserCard from "@/components/cards/UserCard";
 import AlbumEditCard from "@/components/editcards/AlbumEditCard";
+import CommentEditCard from "@/components/editcards/CommentEditCard";
 import {
   AlbumInfo,
   CommentInfo,
@@ -33,7 +33,7 @@ const ResourceDetailPage = async ({
         return <PostCard postInfo={post} />;
       case "comments":
         const comment: CommentInfo = await CommentAPI.fetchComment(params.id);
-        return <CommentCard commentInfo={comment} />;
+        return <CommentEditCard id={params.id} commentInfo={comment} />;
       case "albums":
         const album: AlbumInfo = await AlbumAPI.fetchAlbum(params.id);
         return <AlbumEditCard id={params.id} albumInfo={album} />;
@@ -52,7 +52,7 @@ const ResourceDetailPage = async ({
   };
   return (
     <div className="grid gap-8 w-1/2 h-full">
-      <div className="flex h-max">{await renderComponent()}</div>;
+      <div className="flex h-max">{await renderComponent()}</div>
     </div>
   );
 };

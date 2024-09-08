@@ -13,14 +13,12 @@ interface AlbumEditCardProps {
 const AlbumEditCard: NextPage<AlbumEditCardProps> = (props) => {
   const { albumInfo, id } = props;
 
-  // State to manage form inputs
   const [formData, setFormData] = useState({
     id: albumInfo.id,
     userId: albumInfo.userId,
     title: albumInfo.title,
   });
 
-  // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
