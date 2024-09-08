@@ -7,7 +7,6 @@ export default function ResourceLayout({
   children: React.ReactNode;
   params: { resourceType: string };
 }) {
-  console.log(params);
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex w-full h-1/6 items-center">

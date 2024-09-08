@@ -6,19 +6,18 @@ import {
   TodoAPI,
   UserAPI,
 } from "@/api";
-import UserCard from "@/components/cards/UserCard";
 import AlbumEditCard from "@/components/editcards/AlbumEditCard";
 import CommentEditCard from "@/components/editcards/CommentEditCard";
 import PhotoEditCard from "@/components/editcards/PhotoEditCard";
 import PostEditCard from "@/components/editcards/PostEditCard";
 import TodoEditCard from "@/components/editcards/TodoEditCard";
+import UserEditCard from "@/components/editcards/UserEditCard";
 import {
   AlbumInfo,
   CommentInfo,
   PhotoInfo,
   PostInfo,
   TodoInfo,
-  UserInfo,
 } from "@/types/resourceInfo";
 
 const ResourceDetailPage = async ({
@@ -44,8 +43,9 @@ const ResourceDetailPage = async ({
         const todo: TodoInfo = await TodoAPI.fetchTodo(params.id);
         return <TodoEditCard id={params.id} todoInfo={todo} />;
       case "users":
-        const user: UserInfo = await UserAPI.fetchUser(params.id);
-        return <UserCard userInfo={user} />;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const user: any = await UserAPI.fetchUser(params.id);
+        return <UserEditCard id={params.id} userInfo={user} />;
       default:
         return;
     }
