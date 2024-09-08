@@ -1,25 +1,17 @@
-"use client";
-
 import _ from "lodash";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
 
 export default function ResourceLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { resourceType: string }
 }) {
-  const path = usePathname();
-  const [title, setTitle] = useState<string>("");
-  useEffect(() => {
-    const segs = path.split("/");
-    setTitle(_.capitalize(segs[segs.length - 1]));
-  }, [path]);
-
+  console.log(params);
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex w-full h-1/6 items-center">
-        <span className="text-2xl font-bold p-8">{title}</span>
+        <span className="text-2xl font-bold p-8">{_.capitalize(params.resourceType)}</span>
       </div>
       <div className="flex-grow">
         <div className="flex w-full h-full justify-center items-center p-8">
