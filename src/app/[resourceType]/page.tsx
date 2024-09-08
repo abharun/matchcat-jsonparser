@@ -31,32 +31,32 @@ const ResourcePage = async ({
       case "posts":
         const postdata: PostInfo[] = await PostAPI.fetchPosts();
         return postdata.map((post, idx) => (
-          <PostCard postInfo={post} key={idx} />
+          <PostCard postInfo={post} id={idx + 1} key={idx} />
         ));
       case "comments":
         const commentdata: CommentInfo[] = await CommentAPI.fetchComments();
         return commentdata.map((comment, idx) => (
-          <CommentCard commentInfo={comment} key={idx} />
+          <CommentCard commentInfo={comment} id={idx + 1} key={idx} />
         ));
       case "albums":
         const albumdata: AlbumInfo[] = await AlbumAPI.fetchAlbums();
         return albumdata.map((album, idx) => (
-          <AlbumCard albumInfo={album} key={idx} />
+          <AlbumCard albumInfo={album} id={idx + 1} key={idx} />
         ));
       case "photos":
         const photodata: PhotoInfo[] = await PhotoAPI.fetchPhotos();
         return photodata.map((photo, idx) => (
-          <PhotoCard photoInfo={photo} key={idx} />
+          <PhotoCard photoInfo={photo} id={idx + 1} key={idx} />
         ));
       case "todos":
         const tododata: TodoInfo[] = await TodoAPI.fetchTodos();
         return tododata.map((todo, idx) => (
-          <TodoCard todoInfo={todo} key={idx} />
+          <TodoCard todoInfo={todo} id={idx + 1} key={idx} />
         ));
       case "users":
         const userdata: UserInfo[] = await UserAPI.fetchUsers();
         return userdata.map((user, idx) => (
-          <UserCard userInfo={user} key={idx} />
+          <UserCard userInfo={user} id={idx + 1} key={idx} />
         ));
       default:
         return;

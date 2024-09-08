@@ -39,6 +39,7 @@ const AlbumEditCard: NextPage<AlbumEditCardProps> = (props) => {
     <div className="flex w-full h-full border-2">
       <div className="flex-col w-full h-full">
         <div className="w-full h-full p-8">
+          <a href="/albums" className="flex font-bold justify-end">Back</a>
           <form className="flex flex-col gap-3">
             <div className="flex flex-col gap-3">
               <label htmlFor="id">ID</label>
