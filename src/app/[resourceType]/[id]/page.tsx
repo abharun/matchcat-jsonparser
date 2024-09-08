@@ -6,12 +6,12 @@ import {
   TodoAPI,
   UserAPI,
 } from "@/api";
-import TodoCard from "@/components/cards/TodoCard";
 import UserCard from "@/components/cards/UserCard";
 import AlbumEditCard from "@/components/editcards/AlbumEditCard";
 import CommentEditCard from "@/components/editcards/CommentEditCard";
 import PhotoEditCard from "@/components/editcards/PhotoEditCard";
 import PostEditCard from "@/components/editcards/PostEditCard";
+import TodoEditCard from "@/components/editcards/TodoEditCard";
 import {
   AlbumInfo,
   CommentInfo,
@@ -42,7 +42,7 @@ const ResourceDetailPage = async ({
         return <PhotoEditCard id={params.id} photoInfo={photo} />;
       case "todos":
         const todo: TodoInfo = await TodoAPI.fetchTodo(params.id);
-        return <TodoCard todoInfo={todo} />;
+        return <TodoEditCard id={params.id} todoInfo={todo} />;
       case "users":
         const user: UserInfo = await UserAPI.fetchUser(params.id);
         return <UserCard userInfo={user} />;
